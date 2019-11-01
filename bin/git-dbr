@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Deletes both local and remote branch.
+
+if [ -z $1 ]; then
+	echo "Branch name required."
+	exit
+fi
+
+REMOTE=$(git getremote $1)
+EXIST=$(git branch | grep -w $1)
+
+if [ -n "$REMOTE" ]; then
+	git push $REMOTE :$1
+else
+	echo "Branch has no remote."
+fi
+
+if [ -n "$EXIST" ]; then
+	git br -D $1
+else
+	echo "Branch doesn't exist locally."
+fi

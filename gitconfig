@@ -1,0 +1,74 @@
+[core]
+	# Remotes where new branches should be put
+	default-remote = "origin"
+
+[color]
+	ui = auto
+
+[alias]
+	co = checkout
+	cc = commit
+	ca = commit -a
+	st = status
+	br = branch
+	fa = fetch --all -p
+	purr = pull --rebase
+
+	# Show hash.
+	hash = log -1 --format="%h"
+
+	# Show graph.
+	graph = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+
+	# Show character differences (in contrast to diff which show line differences).
+	dif = diff --color-words=[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+
+
+	# Rebase aliases
+	rabort = rebase --abort
+	rcontinue = rebase --continue
+	rskip = rebase --skip
+	ri = rebase -i
+	rimaster = rebase -i master
+
+	# Get branch name.
+	get-branch = rev-parse --abbrev-ref HEAD
+
+	# Get branch remote name. Don't forget to configure core.default-remote, for instance:
+	# git config core.default-remote origin
+	get-remote = !sh -c 'branch=$(git get-branch) && rem=$(git config branch.$branch.remote || git config core.default-remote) && echo $rem'
+
+	# Push current branch to remote. If there is no remote branch in will be created in default-remote.
+	pp = !sh -c 'remote=$(git get-remote) && branch=$(git get-branch) && git push $remote $branch'
+
+	# Force push current branch to remote. If there is no remote branch in will be created in default-remote.
+	pforce = !sh -c 'remote=$(git get-remote) && branch=$(git get-branch) && git push --force $remote $branch'
+
+	# reset --hard current branch with proper branch from remote.
+	rh = !sh -c 'remote=$(git get-remote) && branch=$(git get-branch) && git reset --hard "$remote/$branch"'
+
+	# Change branch to master, fetch and reset project with all submodules
+	master = !sh -c 'rem=$(git config branch.master.remote) && git fa && git co master && git reset --hard $rem/master && git submodule update'
+
+	# Fetch and reset current branch and other branch given as a parameter
+	reset-with = !sh -c 'mrem=$(git config branch.$1.remote) && brem=$(git get-remote) && current=$(git get-branch) && git co $1 && git fa -p && git reset --hard $mrem/$1 && git co $current && git reset --hard $brem/$current' -
+
+	# Fetch and reset current branch and master
+	reset-master = !sh -c 'git reset-with master'
+
+	# Fetch, reset current branch, reset master and interactive rebase on master
+	rrmaster = !sh -c 'git reset-master && git rebase -i master'
+
+	# Rebase and merge into branch given as a parameter with --no-ff
+	merge-into = !sh -c 'branch=$(git get-branch) && git rebase -i $1 && git co $1 && git merge --no-ff --no-edit $branch' -
+
+	# Rebase and merge into master with --no-ff
+	masterize = !sh -c 'git merge-into master'
+
+	# Pull all submodules
+	fetch-modules = !sh -c 'git submodule foreach "git pull origin $1"' -
+
+[branch]
+	autosetuprebase = always
+
+[push]
+	default = current

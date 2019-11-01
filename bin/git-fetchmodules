@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -z $1 ]; then
+	echo "Branch name required."
+	exit
+fi
+
+git submodule foreach "
+	branch=$1;
+	exists=\$(git show-ref refs/heads/\$branch | cut -d ' ' -f1);
+
+	if [ -z \$exists ]; then
+		branch='master';
+	fi;
+
+	echo Checking branch \$branch for submodule \$name.;
+
+	git fetch --all -p;
+	git co \$branch;
+	git reset --hard origin/\$branch;
+"

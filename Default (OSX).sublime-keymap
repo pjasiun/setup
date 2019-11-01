@@ -1,0 +1,15 @@
+[
+    { "keys": [ "super+shift+up" ], "command": "swap_line_up" },
+    { "keys": [ "super+shift+down" ], "command": "swap_line_down" },
+    { "keys": [ "super+alt+up" ], "command": "select_lines", "args": { "forward": false } },
+    { "keys": [ "super+alt+down" ], "command": "select_lines", "args": { "forward": true } },
+    // swap the keybindings for paste and paste_and_indent
+    { "keys": [ "super+v" ], "command": "paste_and_indent" },
+    { "keys": [ "super+shift+v" ], "command": "paste" },
+    { "keys": [ "super+shift+c" ], "command": "consolewrap" },
+    { "keys": [ "super+8" ], "command": "prev_bookmark" },
+    { "keys": [ "super+5" ], "command": "next_bookmark" },
+    { "keys": [ "super+4" ], "command": "toggle_bookmark" },
+    { "keys": [ "super+6" ], "command": "clear_bookmarks" },
+    { "keys": [ "super+ctrl+i" ], "command": "import_js", "args": { "command": "word" } }
+]
