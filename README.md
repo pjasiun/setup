@@ -11,7 +11,7 @@ git clone git@github.com:pjasiun/setup.git
 
 Install the following applications.
 
-## From App store:
+## From App Store:
 
  - Magnet
  - Sip
@@ -100,6 +100,15 @@ Install packages:
  - DocBlockr
  - GitGutter
  - MarkdownEditing
+
+Define dark theme for MarkdownEditing:
+
+```
+{
+    "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme"
+}
+```
+
 
 # Apache
 
