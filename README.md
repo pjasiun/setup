@@ -55,9 +55,6 @@ ln -s /Users/pjasiun/workspace/setup/apache-restart.fish /Users/pjasiun/.config/
 
 ```
 ln -s /Users/pjasiun/workspace/setup/gitconfig /usr/local/etc/
-ln -s /Users/pjasiun/workspace/setup/bin/git-dbr /usr/local/bin/
-ln -s /Users/pjasiun/workspace/setup/bin/git-fetchmodules /usr/local/bin/
-ln -s /Users/pjasiun/workspace/setup/bin/git-getremote /usr/local/bin/
 git config --global user.name "Piotr Jasiun"
 git config --global user.email "pjasiun@gmail.com"
 git config --global core.editor "subl -w"
