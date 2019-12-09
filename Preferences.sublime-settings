@@ -11,7 +11,7 @@
 		"node_modules",
 		"coverage"
 	],
-	"font_size": 19.0,
+	"font_size": 18.0,
 	"ignored_packages":
 	[
 		"Markdown",
