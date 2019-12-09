@@ -5,6 +5,9 @@
 [color]
 	ui = auto
 
+[credential]
+	helper = osxkeychain
+
 [alias]
 	co = checkout
 	cc = commit
