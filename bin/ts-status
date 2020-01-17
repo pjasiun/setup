@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+/* eslint no-console: 0 */
+/*eslint-env node:true*/
+
+'use strict';
+
+const util = require('util');
+const chalk = require('chalk');
+const exec = util.promisify(require('child_process').exec);
+const path = require('path');
+
+logTsPercent(path.join(process.cwd(), process.argv[2]));
+
+async function logTsPercent(directory) {
+  const { stdout } = await exec(`'cloc' --json  --exclude-dir=node_modules ${directory}`);
+  const clocData = JSON.parse(stdout);
+  if(!clocData.JavaScript) {
+      throw 'No JS code';
+  }
+
+  const jsCode = clocData.JavaScript.code;
+  const tsCode = clocData.TypeScript ? clocData.TypeScript.code : 0;
+  const tsPercent = Math.round((tsCode / (jsCode + tsCode)) * 100 * 100) / 100;
+  console.log(
+    `TypeScript code percent in '${chalk.green(directory)}' directory: ${chalk.green(tsPercent)}%`,
+  );
+}
