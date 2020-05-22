@@ -20,7 +20,7 @@ Install the following applications.
 
 ## From website:
 
- - [Sublime Text](https://www.sublimetext.com/)
+ - [Visual Studio Code](https://code.visualstudio.com/)
  - [Karabiner-Elements](https://pqrs.org/osx/karabiner/)
  - [iTerm2](https://iterm2.com/)
  - [Homebrew](https://brew.sh/)
@@ -57,7 +57,7 @@ ln -s /Users/pjasiun/workspace/setup/apache-restart.fish /Users/pjasiun/.config/
 ln -s /Users/pjasiun/workspace/setup/gitconfig /usr/local/etc/
 git config --global user.name "Piotr Jasiun"
 git config --global user.email "pjasiun@gmail.com"
-git config --global core.editor "subl -w"
+git config --global core.editor "code --wait"
 ```
 
 # nodeprompt
@@ -79,32 +79,10 @@ ln -s /Users/pjasiun/workspace/setup/windows_shortcuts.json /Users/pjasiun/.conf
 
 Add `windows_shortcuts.json` modifications in Karabiner-Elements application.
 
-# Sublime
+# Virtual Studio Code
 
-```
-ln -s /Applications/Sublime Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/
-ln -s /Applications/Sublime Text.app/Contents/SharedSupport/bin/sublime /usr/local/bin/
-ln -s /Users/pjasiun/workspace/setup/Preferences.sublime-settings "/Users/pjasiun/Library/ApplicationSupport/Sublime Text 3/Packages/User/"
-ln -s /Users/pjasiun/workspace/setup/Default\ \(OSX\).sublime-keymap "/Users/pjasiun/Library/ApplicationSupport/Sublime Text 3/Packages/User/"
-```
-
-Install [package control](https://packagecontrol.io/installation).
-
-Install packages:
-
- - All Autocomplete
- - Babel
- - DocBlockr
- - GitGutter
- - MarkdownEditing
-
-Define dark theme for MarkdownEditing:
-
-```
-{
-    "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Dark.tmTheme"
-}
-```
+- Install [Settings Sync plugin](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
+- Execute `sync: Download Settings`
 
 
 # Apache
