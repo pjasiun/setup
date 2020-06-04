@@ -128,7 +128,7 @@ module.exports = {
 			text += statusStyle( ') ' );
 		}
 
-		text += styles.bold( styles.lightCyan( `${ model.path }${ this.promptChar } ` ) );
+		text += styles.bold( styles.lightCyan( `${ model.path.join('/') }${ this.promptChar } ` ) );
 
 		return text;
 	}
