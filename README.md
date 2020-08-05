@@ -42,6 +42,12 @@ Set hotkey (⌘ + `) in: iTerm2 -> Preferences... -> Keys -> Hotkey
 
 See https://github.com/nvm-sh/nvm/issues/303.
 
+```
+curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+fisher add FabioAntunes/fish-nvm
+fisher add edc/bass
+```
+
 # fish
 
 ```
