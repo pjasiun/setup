@@ -36,13 +36,16 @@ brew install tree
 
 # iTerm2
 
-Set hotkey (⌘ + `) in: iTerm2 -> Preferences... -> Keys -> Hotkey
+ - Add Cascadia font.
+ - Import guake.json profile
+ - Set guake.json as a default profile
 
 # NVM
 
 See https://github.com/nvm-sh/nvm/issues/303.
 
 ```
+brew install nvm
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 fisher add FabioAntunes/fish-nvm
 fisher add edc/bass

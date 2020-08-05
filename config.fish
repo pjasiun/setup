@@ -1,3 +1,5 @@
+nvm use default
+
 set CDPATH . $HOME/workspace
 
 set -x LC_ALL en_US.UTF-8
