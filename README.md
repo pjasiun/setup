@@ -24,6 +24,7 @@ Install the following applications.
  - [Karabiner-Elements](https://pqrs.org/osx/karabiner/)
  - [iTerm2](https://iterm2.com/)
  - [Homebrew](https://brew.sh/)
+ - [Mos](https://mos.caldis.me/)
 
 ## From console:
 
