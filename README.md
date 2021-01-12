@@ -33,6 +33,8 @@ brew install cloc
 brew install fish
 brew install git
 brew install tree
+brew install dbeaver-community
+brew install --cask postman
 ```
 
 # iTerm2
