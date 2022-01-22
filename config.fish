@@ -1,4 +1,4 @@
-nvm use default
+nvm use 16
 
 set CDPATH . $HOME/workspace
 

@@ -1,7 +1,7 @@
 Here is a list of steps I use to initialize a new Mac computer. Feel free to use any part of it as you need.
 
 ```
-cd /Users/pjasiun/
+cd /Users/[username]/
 mkdir workspace
 cd workspace
 git clone git@github.com:pjasiun/setup.git
@@ -45,30 +45,27 @@ brew install --cask postman
 
 # NVM
 
-See https://github.com/nvm-sh/nvm/issues/303.
-
 ```
 brew install nvm
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-fisher add FabioAntunes/fish-nvm
-fisher add edc/bass
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install FabioAntunes/fish-nvm edc/bass
 ```
 
 # fish
 
 ```
-echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
-ln -s /Users/pjasiun/workspace/setup/config.fish /Users/pjasiun/.config/fish/
-ln -s /Users/pjasiun/workspace/setup/apache-restart.fish /Users/pjasiun/.config/fish/functions/
+echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+ln -s /Users/[username]/setup/config.fish /Users/[username]/.config/fish/
+ln -s /Users/[username]/setup/apache-restart.fish /Users/[username]/.config/fish/functions/
 ```
 
 # git
 
 ```
-ln -s /Users/pjasiun/workspace/setup/gitconfig /usr/local/etc/
-git config --global user.name "Piotr Jasiun"
-git config --global user.email "pjasiun@gmail.com"
+ln -s /Users/[username]/setup/gitconfig /private/etc
+git config --global user.name ...
+git config --global user.email ...
 git config --global core.editor "code --wait"
 ```
 
@@ -77,16 +74,18 @@ git config --global core.editor "code --wait"
 See https://github.com/oleq/nodeprompt
 
 ```
+cd /opt/
 git clone https://github.com/oleq/nodeprompt.git
-ln -s /Users/pjasiun/workspace/nodeprompt/bin/fish_prompt.fish /Users/pjasiun/.config/fish/functions/fish_prompt.fish
-mkdir /Users/pjasiun/.nodeprompt/
-ln -s /Users/pjasiun/workspace/setup/config.user.js /Users/pjasiun/.nodeprompt/
+fish_add_path /opt/nodeprompt/bin/
+ln -s /opt/nodeprompt/bin/fish_prompt.fish /Users/[username]/.config/fish/functions/
+mkdir /Users/[username]/.nodeprompt/
+ln -s /Users/[username]/setup/config.user.js /Users/[username]/.nodeprompt/
 ```
 
 # Karabiner-Elements
 
 ```
-ln -s /Users/pjasiun/workspace/setup/windows_shortcuts.json /Users/pjasiun/.config/karabiner/assets/complex_modifications/
+ln -s /Users/[username]/setup/windows_shortcuts.json /Users/[username]/.config/karabiner/assets/complex_modifications/
 ```
 
 Add `windows_shortcuts.json` modifications in Karabiner-Elements application.
@@ -95,11 +94,4 @@ Add `windows_shortcuts.json` modifications in Karabiner-Elements application.
 
 - Install [Settings Sync plugin](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 - Execute `sync: Download Settings`
-
-
-# Apache
-
-```
-sudo ln -s /Users/pjasiun/workspace/setup/httpd.conf /etc/apache2/
-```
 
