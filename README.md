@@ -56,14 +56,15 @@ fisher install FabioAntunes/fish-nvm edc/bass
 ```
 echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
 chsh -s /opt/homebrew/bin/fish
-ln -s /Users/[username]/setup/config.fish /Users/[username]/.config/fish/
-ln -s /Users/[username]/setup/apache-restart.fish /Users/[username]/.config/fish/functions/
+ln -s /Users/[username]/workspace/setup/config.fish /Users/[username]/.config/fish/
+ln -s /Users/[username]/workspace/setup/apache-restart.fish /Users/[username]/.config/fish/functions/
 ```
 
 # git
 
 ```
-ln -s /Users/[username]/setup/gitconfig /private/etc
+ln -s /Users/[username]/workspace/setup/gitconfig /private/etc
+n -s /private/etc/gitconfig /opt/homebrew/etc/
 git config --global user.name ...
 git config --global user.email ...
 git config --global core.editor "code --wait"
@@ -79,19 +80,18 @@ git clone https://github.com/oleq/nodeprompt.git
 fish_add_path /opt/nodeprompt/bin/
 ln -s /opt/nodeprompt/bin/fish_prompt.fish /Users/[username]/.config/fish/functions/
 mkdir /Users/[username]/.nodeprompt/
-ln -s /Users/[username]/setup/config.user.js /Users/[username]/.nodeprompt/
+ln -s /Users/[username]/workspace/setup/config.user.js /Users/[username]/.nodeprompt/
 ```
 
 # Karabiner-Elements
 
 ```
-ln -s /Users/[username]/setup/windows_shortcuts.json /Users/[username]/.config/karabiner/assets/complex_modifications/
+ln -s /Users/[username]/workspace/setup/windows_shortcuts.json /Users/[username]/.config/karabiner/assets/complex_modifications/
 ```
 
 Add `windows_shortcuts.json` modifications in Karabiner-Elements application.
 
 # Virtual Studio Code
 
-- Install [Settings Sync plugin](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
-- Execute `sync: Download Settings`
+- Turn on native settings sync with GitHub account
 
