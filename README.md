@@ -14,9 +14,6 @@ Install the following applications.
 ## From App Store:
 
  - Magnet
- - Sip
- - Fantastical 2
- - GIPHY Capture
 
 ## From website:
 
@@ -25,6 +22,7 @@ Install the following applications.
  - [iTerm2](https://iterm2.com/)
  - [Homebrew](https://brew.sh/)
  - [Mos](https://mos.caldis.me/)
+ - [Rectangle](https://rectangleapp.com/)
 
 ## From console:
 
