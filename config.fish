@@ -1,9 +1,8 @@
-nvm use default
-
-set CDPATH . $HOME/workspace
+nvm use latest
 
 set -x LC_ALL en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
 
 set -gx PATH $PATH $HOME/workspace/setup/bin/
-set -gx PATH $PATH $HOME/workspace/nodeprompt/bin/
+
+eval "$(/opt/homebrew/bin/brew shellenv)"

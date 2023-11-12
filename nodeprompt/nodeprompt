@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+/**
+ * The main program to be executed to generate PS1 (bash).
+ *
+ * @license MIT
+ */
+
+/* global process, __dirname */
+
+'use strict';
+
+const Nodeprompt = require( __dirname + '/nodeprompt.js' );
+const prompt = new Nodeprompt().print();
+
+process.stdout.write( prompt );

@@ -1,0 +1,11 @@
+{
+    "@\UF702"  = "moveWordBackward:";
+    "^\UF702"  = "moveWordBackward:";
+    "@\UF703"  = "moveWordForward:";
+    "^\UF703"  = "moveWordForward:";
+
+    "@$\UF702"  = "moveWordBackwardAndModifySelection:";
+    "^$\UF702"  = "moveWordBackwardAndModifySelection:";
+    "@$\UF703"  = "moveWordForwardAndModifySelection:";
+    "^$\UF703"  = "moveWordForwardAndModifySelection:";
+}
