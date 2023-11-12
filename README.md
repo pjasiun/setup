@@ -20,8 +20,6 @@ Install the following applications.
 
 ```
 brew install cloc
-brew install fish
-brew install git
 brew install tree
 brew install --cask postman
 ```
@@ -43,6 +41,7 @@ fisher install FabioAntunes/fish-nvm edc/bass
 # fish
 
 ```
+brew install fish
 echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
 chsh -s /opt/homebrew/bin/fish
 cp ~/setup/config.fish ~/.config/fish/
@@ -51,6 +50,7 @@ cp ~/setup/config.fish ~/.config/fish/
 # git
 
 ```
+brew install git
 ln -s ~/setup/gitconfig /private/etc
 n -s /private/etc/gitconfig /opt/homebrew/etc/
 git config --global user.name ...
